@@ -29,11 +29,8 @@ public class AppTest extends Manager {
         softAssert.assertEquals(mobilePage.getTitle(), "MOBILE", "Wrong page loaded!");
 
         mobilePage.clickDropDwBtn("Name");
-        List<String> phones = mobilePage.listPropertiesProductInfoList();
-
-        boolean sorted = Ordering.natural().isOrdered(phones);
-
-        softAssert.assertTrue(sorted,"The list is not sorted!");
+    
+        softAssert.assertTrue(mobilePage.listPropertiesProductInfoList(),"The list is not sorted!");
 
         Thread.sleep(1000);
         softAssert.assertAll();

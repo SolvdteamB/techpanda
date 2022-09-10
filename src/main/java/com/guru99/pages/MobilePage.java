@@ -12,6 +12,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import com.google.common.collect.Ordering;
+
 public class MobilePage {
 
     @FindBy (xpath = "//select[@title='Sort By']")
@@ -41,7 +43,7 @@ public class MobilePage {
         return mobileTitle.getText();
     }
 
-    public List<String> listPropertiesProductInfoList(){
+    public boolean listPropertiesProductInfoList(){
         
         //getting number of phones
         String text = numberOfItems.getText();
@@ -57,8 +59,14 @@ public class MobilePage {
             phones.add(productInfoList.get(i).getText().split("\\n")[0]);
         }
 
-        return phones;
+        return Ordering.natural().isOrdered(phones);
  
     }
+
+
+
+
+
+
 
 }
