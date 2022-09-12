@@ -46,8 +46,7 @@ public class AppTest extends Manager {
         MainPage mainPage = new MainPage(driver);        
         MobilePage mobilePage = mainPage.clickMobileBtn();
         Double sonyPrice = mobilePage.getPhonePrice("Sony Xperia");
-        mobilePage.clickSonyXperia();
-        SonyXperiaPage sonyXperiaPage = new SonyXperiaPage(driver);  
+        SonyXperiaPage sonyXperiaPage = mobilePage.clickSonyXperia();
         softAssert.assertEquals(sonyPrice, sonyXperiaPage.getPhonePrice(),"Prices are differente!!!");
         softAssert.assertAll();
 

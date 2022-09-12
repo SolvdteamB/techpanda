@@ -47,8 +47,9 @@ public class MobilePage {
         return mobileTitle.getText();
     }
 
-    public void clickSonyXperia(){
+    public SonyXperiaPage clickSonyXperia(){
         sonyXperiaImg.click();
+        return new SonyXperiaPage(driver);
     }
 
 
