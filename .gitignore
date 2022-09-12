@@ -1,4 +1,4 @@
-target
+target/
 target/classes/com/guru99/pages/MobilePage.class
 target/test-classes/com/guru99/AppTest.class
 Testcase*.*
