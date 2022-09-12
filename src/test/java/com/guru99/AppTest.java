@@ -1,5 +1,6 @@
 package com.guru99;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.testng.annotations.Test;
@@ -9,6 +10,7 @@ import com.google.common.collect.Ordering;
 import com.guru99.manager.Manager;
 import com.guru99.pages.MainPage;
 import com.guru99.pages.MobilePage;
+import com.guru99.pages.SonyXperiaPage;
 
 /**
  * Unit test for simple App.
@@ -41,22 +43,13 @@ public class AppTest extends Manager {
 
         driver.get("http://live.techpanda.org/");
         SoftAssert softAssert = new SoftAssert();
-
-        MainPage mainPage = new MainPage(driver);
-        
+        MainPage mainPage = new MainPage(driver);        
         MobilePage mobilePage = mainPage.clickMobileBtn();
-
-        //mobilePage.clickDropDwBtn("Name");
-
-
-
-
-
-
-
-
-
-
+        Double sonyPrice = mobilePage.getPhonePrice("Sony Xperia");
+        mobilePage.clickSonyXperia();
+        SonyXperiaPage sonyXperiaPage = new SonyXperiaPage(driver);  
+        softAssert.assertEquals(sonyPrice, sonyXperiaPage.getPhonePrice(),"Prices are differente!!!");
+        softAssert.assertAll();
 
     }
 

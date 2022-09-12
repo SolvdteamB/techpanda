@@ -1,6 +1,6 @@
 package com.guru99;
 
-import org.apache.commons.compress.archivers.zip.X0016_CertificateIdForCentralDirectory;
+
 
 /**
  * Hello world!
@@ -21,6 +21,19 @@ public class App
 
         System.out.println(splited[0]);
 
+        String algo = null;
+
+        String oldprice = "120";
+        String newprice = "500";
+
+        int result=0;
+        
+        if(oldprice!=null && newprice!=null){
+            System.out.println(oldprice.compareTo(newprice));
+        }
+        
+        
+        //System.out.println(Integer.parseInt(algo));
 
 
     }
